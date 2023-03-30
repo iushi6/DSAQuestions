@@ -7,22 +7,30 @@ public class firstAndLastOccurence {
 	static int searchIndexOfElement(int[] a, int x) {
 		int start = 0;
 		int end = a.length-1;
-		int res = -1;
+		int first = -1;
 		
 		while(start<=end){
 			int mid = start - (start - end)/2;
 			
 			if(a[mid]==x) {
-				res =mid;
-				end = mid - 1;
+				
+			// For Finding the First Ocurence --->
+				first =mid;
+				end = mid - 1; //Most Important Step for Finding First Index
+			
+		    // For Finding the Last Occurence ---->
+				//int last = -1;
+				//last = mid;
+				//start = mid + 1;
+				
 			}else if(x > a[mid]) {
 				start  = mid + 1;
 			}else {
 				end = mid - 1;
 			}
 		}
-		if(res != -1) {
-			return res;
+		if(first != -1) {
+			return first;
 		}
 	    else {
 		return -1;
