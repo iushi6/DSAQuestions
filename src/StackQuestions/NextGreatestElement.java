@@ -2,6 +2,8 @@ package StackQuestions;
 import java.util.Stack;
 public class NextGreatestElement {
 
+	//Next Largest Element --->
+	
 	static void getGreatestElement(int[] a) {
 	Stack<Integer> s = new Stack<>();
 	
@@ -26,7 +28,7 @@ public class NextGreatestElement {
 	}
 	
 	public static void main(String args[]) {
-		int[] a ={4,10,5,18,3,12,7};
+		int[] a ={1,3,0,0,1,2,4};
 		getGreatestElement(a);
 	}
 	
