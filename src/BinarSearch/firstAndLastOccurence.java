@@ -2,25 +2,32 @@ package BinarSearch;
 
 import java.util.Scanner;
 
-public class reverseSortedArray {
+public class firstAndLastOccurence {
 
 	static int searchIndexOfElement(int[] a, int x) {
 		int start = 0;
 		int end = a.length-1;
+		int res = -1;
 		
 		while(start<=end){
 			int mid = start - (start - end)/2;
 			
 			if(a[mid]==x) {
-				return mid;
+				res =mid;
+				end = mid - 1;
 			}else if(x > a[mid]) {
-				end  = mid + 1;
+				start  = mid + 1;
 			}else {
-				start = mid - 1;
+				end = mid - 1;
 			}
 		}
+		if(res != -1) {
+			return res;
+		}
+	    else {
 		return -1;
-	}
+    	}
+		}
 	
 	public static void main(String args[]) {
 		Scanner sc = new Scanner (System.in);
@@ -32,6 +39,6 @@ public class reverseSortedArray {
 		int searchIndex = sc.nextInt();
 	int ans = searchIndexOfElement(arr, searchIndex);	
 	
-	System.out.println("Required Index of Element is : "+ans);
+	System.out.println("First Occurence of Element is : "+ans);
   }
 }
