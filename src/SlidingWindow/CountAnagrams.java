@@ -1,22 +1,25 @@
 package SlidingWindow;
 
+import java.util.*;
+
 public class CountAnagrams {
 
-	static int findNumber(String str1,String str2,int k) {
+	static int findNumber(String str1,String str2,int sz) {
 		int i =0;
 		int j=0;
+		Map<Character,Integer> map = new HashMap();
 		int count =0;
 		int ans =0;
-		while(j<str1.length()) {
+		
+		while(j<str2.length()) {
 			
-			if(j-i+1 < k) {
+			if(j-i+1 < sz) {
+			
 				j++;
 				
-			}else if(j-i+1 == k){
+			}else if(j-i+1 == sz){
 				
-				if(count == 0) {
-					ans++;
-				}
+				
 			}
 			
 		}
